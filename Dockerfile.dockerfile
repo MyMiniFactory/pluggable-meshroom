@@ -12,7 +12,7 @@ RUN apt-get update \
 WORKDIR /app
 
 COPY python_wrapper /app/python_wrapper/
-COPY Meshroom-2018.1.0 /app/Meshroom-2018.1.0/
+ADD https://github.com/MyMiniFactory/plugable-meshroom/releases/download/2018.1.0/Meshroom-2018.1.0.zip /app/Meshroom-2018.1.0/
 
 RUN chown -R $UNAME:$UNAME /app && chmod u+x /app/Meshroom-2018.1.0/aliceVision/bin/*
 
