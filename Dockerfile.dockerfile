@@ -10,7 +10,8 @@ RUN apt-get update \
     && apt-get install -y python3.6 wget unzip \
     && groupadd --gid $GID $UNAME \
     && useradd --gid $GID --uid $UID $UNAME \
-    && wget https://github.com/MyMiniFactory/plugable-meshroom/releases/download/2018.1.0/Meshroom-2018.1.0.zip && unzip /app/Meshroom-2018.1.0.zip
+    && wget https://github.com/MyMiniFactory/plugable-meshroom/releases/download/2018.1.0/Meshroom-2018.1.0.zip \
+    && unzip /app/Meshroom-2018.1.0.zip
 
 COPY python_wrapper /app/python_wrapper/
 
