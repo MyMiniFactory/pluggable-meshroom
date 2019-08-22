@@ -43,7 +43,6 @@ class Node():
     - parameters: set of parameters use to run the step
     - nb_of_images: number of pictures
     - log_dir: location of the folder where log files are written for each step
-    - status_dir: direction to the folder where to write the status.json file
     """
 
     def __init__(self, step_name, process_directions, log_dir, setups):
@@ -57,6 +56,8 @@ class Node():
 
     def run_the_node(self, status_file, status_dict):
         """ Run the step represented by the node and updates the status.json file which gives a live output of the running process.
+        It uses the status_file (location of the status file) and the status_dict (python dictionary representing the status.json file)
+        to give a live report of the node being processed.
         """
 
         utils.create_folder(self.output_folder)
@@ -106,7 +107,7 @@ class Node():
         return 0
 
     def add_parameters_to_command_line(self):
-        """ Build the parameter part of the command line for a given parameters dictionary.
+        """ Build the parameter part of the command line for a given dictionary of parameters.
         Ignore the parameter called "groupSize" in order to deal with the DepthMap particular case.
         """
         parameters_cmd_line = []
@@ -119,7 +120,7 @@ class Node():
         return (parameters_cmd_line)
 
     def add_locations_to_command_line(self):
-        """ Build the intern_locations part of the command line for a given intern_locations dictionary.
+        """ Build the intern_locations part of the command line for a given dictionary of intern_locations.
         """
         locations_cmd_line = []
         for key in self.intern_locations:
@@ -139,7 +140,7 @@ class Node():
         return (report)
 
     def log_report(self):
-        """ Return a dictionary containing a report on the log file of the step.
+        """ Returns a dictionary containing a report on the log file of the step.
         """
         # check log.txt file existence and open it if possible
         log_report = {}

@@ -17,7 +17,6 @@ Values
     + HIGH_AVERAGE_DATASET
     + HIGH_BIG_DATASET
 
-Here should be listed different bunches of parameters which go with the pipeline structure chosen.
 """
 
 MEDIUM = {
@@ -203,7 +202,7 @@ def get_the_parameters(quality, nb_of_images):
 
     Returns
     ----------
-    A parameter set.
+    A set of parameters.
     """
     parameters_sets_dict = {
         "DRAFT": {

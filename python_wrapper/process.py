@@ -98,7 +98,7 @@ def process(binary_folder_direction, input_folder_direction, output_folder_direc
 
 
 def build_the_pipeline(setups, directions, structure, status_dict):
-    """ Build the pipeline to run as a list of instances of the class Node.
+    """ Build the pipeline to run as a list of nodes.
 
     Arguments
     ----------
